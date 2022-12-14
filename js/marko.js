@@ -95,28 +95,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
 
 
                                          //-------------------------------FORMA--------------------------------//
-    // document.querySelector("")
-    //                         function(){
-    //                    var objAboutyou, objGender, objName, objEmail,objSubmite, nizTrue, nizFals;
-    //                         objAboutyou=document.querySelector("#Aboutyou");
-    //                         objGender=document.querySelector("#rGender");
-    //                         objName=document.querySelector("#Name");
-    //                         objName=document.querySelector("#Email");
-    //                         objName=document.querySelector("#Submite");
-
-    //                         nizTrue=[];
-    //                         nizFals=[];
-
-    //                         if(objName.value.length<1){
-    //                             nizFals.push("You need more letters for name");
-    //                         }
-    //                         else{
-    //                             nizTrue.push(objName.value);
-    //                         }
-    //                         }
-    //                               document.querySelector(".footer").innerHTML=objName;
-
-
+   
 
 
 

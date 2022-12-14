@@ -408,7 +408,6 @@
     .fh5co-books {
       margin-bottom: 60px; } }
 .books {
-  text-decoration: none;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -444,11 +443,9 @@
       visibility:visible;
       opacity: 0.7; }
   .single-book .single-book__title {
-    text-decoration: none;
     margin: 19px 0 18px;
     font-size: 18px; }
   .single-book .single-book__price {
-    text-decoration: none;
     font-size: 18px;
     font-weight: 600;
     font-style: italic;
