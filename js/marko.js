@@ -23,7 +23,7 @@ var tipName=["Homepage","Page1","Page2","Page3","Page4"];
 
 nizHref=["#","#","#","#"];
 nizH=["PHP","Java Script","Python","Node.js"];
-nizSrc=["./images/PHP.png","./images/books-2.jpg","../images/Phyton1.jpg","./images/NOD.jpg"];
+nizSrc=["./images/PHP.png","./images/books-2.jpg","./images/zawebjs.jpg","./images/NOD.jpg"];
 nizS=["$15.00","$22.00","$25.00","$30.00"];
         var booktip="";
         for(let i=0; i<nizHref.length; i++){
