@@ -92,18 +92,79 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                         colectortip+="<h5>Shere</h5>"
             document.querySelector(".social").innerHTML=colectortip;
             console.log(colectortip);
+                                //---------------------------------FORMA--------------------------------//
 
 
-                                         //-------------------------------FORMA--------------------------------//
-   
+                                         
+
+    var errorNumber = 0 
+    window.onload =function(){
+        let taster=document.querySelector("#btnP");
+    taster.addEventListener("Submite-form", formValidation);
+           }
+                   
+function formValidation(){
+    let objFirstName, objLastName, objUserName, objCityType, objEmail,objZipAdress,objTacType,objMessage;
+    objFirstName=document.querySelector("#validationCustom01");
+    objLastName=document.querySelector("#validationCustom02");
+    objUserName=document.querySelector("#validationCustomUsername");
+    objCityType=document.querySelector("#validationCustom03");
+    objEmail=document.querySelector("#validationCustom04");
+    objZipAdress=document.querySelector("#validationCustom05");
+    objTacType=document.querySelector("#invalidCheck");
+    objMessage=document.querySelector("#atext");
+     
+let reFirstName, reLastName,reUsername, reZipAdress,reEmail,reCytyType ;
+reFirstName=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
+reLastName=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
+reUsername=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
+reZipAdress=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
+reEmail=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
+reCytyType=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
 
 
+checkAll(reFirstName, objFirstName, "Name invalid format. Try: Uros ");
 
+checkAll(reLastName, objLastName, "Last name invalid format. Try: Joksimovic ");
 
+checkAll(reUsername, objUserName, "Username invalid format. Try: @youusername / ...");
 
+checkAll(reZipAdress, objZipAdress, "Zip format invalid. Try: Pinkijeva 8, Kneza Mihajla 123...");
 
+checkAll(reEmail, objEmail, "Email invalid format. Try:markorunac@exmale.domen");
 
+checkAll(reCytyType,objCityType, "Cityformat invalid. Try: Belgrade, Moscow,London...");
 
+if(objMessage.value.length < 10 ){
+    objMessage.nextElementSibling.classList.remove("hide");
+    objMessage.innerHTML="You need at least 10 caracters";
+    objMessage.classList.add("type-border");
+}
+if(errorNumber == 0){
+    let formControl = `
+    <p>First name: ${objFirstName.value}</p>
+    <p>Email: ${objLastName.value}</p>
+    <p>Adresa: ${objUserName.value}</p>
+    <p>Smer: ${objCityType.value}</p>
+    <p>Status: ${objEmail.value}}</p>
+    <p>Predmeti: ${objZipAdress.value}</p>
+    <p>Napomena: ${objMessage.value}</p>`;
 
-                    
-            
+    document.getElementById("row g-3 needs-validation").reset();
+}
+
+function checkAll(re,object,message){
+    if(!re.test(object.value)){
+        objekat.nextElementSibling.classList.remove("hide");
+        objekat.nextElementSibling.innerHTML=message;
+        objekat.classList.add("type-border");
+        errorNumber++;
+    }
+
+else{
+    objekat.nextElementSibling.classList.add("hide");
+    objekat.nextElementSibling.innerHTML="";
+    objket.classList.remove("type-border");
+    }
+}
+}

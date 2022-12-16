@@ -1,0 +1,9 @@
+.hide{
+    display: none;
+}
+.type-border{
+    border: 1px solid #ff0000;
+}
+.btn{
+    margin-top: 10px;
+}
