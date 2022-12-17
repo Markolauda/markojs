@@ -16,7 +16,7 @@ var tipName=["Homepage","Page1","Page2","Page3","Page4"];
 
 
 
-                                    //-------------------------------BOOKS----------------------------------//
+                                        //-------------------------------BOOKS----------------------------------//
 
 
 
@@ -53,11 +53,11 @@ nizS=["$15.00","$22.00","$25.00","$30.00"];
                     `;
                  }
        document.querySelector(".books").innerHTML=booktip;
-       console.log(booktip);
+       
 
 
     
-                    //------------------------------------COUNTER----------------------------------------//
+                      //------------------------------------COUNTER----------------------------------------//
 
 var nizCounter=["50","600","2000","125"];
 var nizCounterA=["./images/counter-1.png","./images/counter-2.png","./images/counter-2.png","./images/counter-4.png"];
@@ -72,99 +72,125 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                         <p>${nizCouterB[i]}</p>
                     </div>
                 </div>
-
                 `;}
                 document.querySelector("#car").innerHTML=countertip;
-                console.log(countertip);
+                
 
-               //-------------------------------------------------COLECTOR---------------------------------------//
+                 //-------------------------------------------------COLECTOR---------------------------------------//
 
-            var nizColector=["./images/social-twitter.png","./images/social-pinterest.png","./images/social-youtube.png","./images/social-twitter.png"];
-                    var colectortip="";
-                    colectortip+="<h5>Follow</h5>"
+            var nizColector=["./images/social-twitter.png","./images/facebook.png","./images/social-youtube.png","./images/instagram.png"];
+            var nizColector01=["https://twitter.com/?lang=sr","https://www.facebook.com/","https://www.youtube.com/","https://www.instagram.com/"];
+                    var colectortip="<h5>Follow</h5>";
+                    colectortip+="<div class='social-icons'>"
                     for(let i=0; i<nizColector.length; i++){
                         colectortip+=`
-                            <div class="social-icons">
-                                 <a href="#" target="_blank"><img src="${nizColector[i]}" alt="social icon"></a>
-                              </div>
-                        
+                        <a href="${nizColector01[i]}" target="_blank"><img src="${nizColector[i]}" alt="social icon"></a>
                         `;}
-                        colectortip+="<h5>Shere</h5>"
+                        
+                        colectortip+="</div><h5>Share</h5>"
+                       
             document.querySelector(".social").innerHTML=colectortip;
-            console.log(colectortip);
+            
+                                
+            
+            
+            
+            
                                 //---------------------------------FORMA--------------------------------//
 
 
-                                         
 
-    var errorNumber = 0 
-    window.onload =function(){
-        let taster=document.querySelector("#btnP");
-    taster.addEventListener("Submite-form", formValidation);
-           }
-                   
-function formValidation(){
-    let objFirstName, objLastName, objUserName, objCityType, objEmail,objZipAdress,objTacType,objMessage;
-    objFirstName=document.querySelector("#validationCustom01");
-    objLastName=document.querySelector("#validationCustom02");
-    objUserName=document.querySelector("#validationCustomUsername");
-    objCityType=document.querySelector("#validationCustom03");
-    objEmail=document.querySelector("#validationCustom04");
-    objZipAdress=document.querySelector("#validationCustom05");
-    objTacType=document.querySelector("#invalidCheck");
-    objMessage=document.querySelector("#atext");
-     
-let reFirstName, reLastName,reUsername, reZipAdress,reEmail,reCytyType ;
-reFirstName=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
-reLastName=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
-reUsername=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
-reZipAdress=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
-reEmail=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
-reCytyType=/^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
+                                var eroor = 0
+                                window.onload = function(){
+                                    let taster = document.querySelector("#abtn");
+                                    taster.addEventListener("click", formValidation);
+                                }
+                            
+                                
+                                function formValidation(){
+                                    let objFirstName, objLastName, objEmail,objAdress,objCity,objComment,tRadios;
+                                
+                                    objFirstName = document.querySelector("#Name");
+                                    objLastName = document.querySelector("#LastName");
+                                    objEmail = document.querySelector("#inputEmail4");
+                                    objAdress = document.querySelector("#inputAddress");
+                                    objCity=document.querySelector("#inputCity")
+                                    objZip = document.getElementsByName("#inputZip");
+                                    objComment = document.querySelector("#floatingTextarea2");
+                                    
+                                
+                                    let aFirstName, aLastName, aEmail,aAdress,aCity,aCommnet;
+                                
+                                
+                                    aFirstName =/^[A-Z][a-z]{2,14}$/;
+                                    aLastName=/^[A-Z][a-z]{2,14}$/;
+                                    aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})+$/;
+                                    aAdress=/^[A-Z][a-z]{2,14}$/;
+                                    aCity=/^[A-Z][a-z]{2,14}$/;
+                                    aCommnet=/^[A-Z][a-z]{2,14}$/;
+                                    
+                                   
+                                   
+                        
+                                    checkFormat(aFirstName, objFirstName, "First name invalid format. Example: Rogerson.");
+                                
+                                    checkFormat(aLastName, objLastName, "Last name invalid format. Example: Rogerson.");
+                                
+                                    checkFormat(aEmail, objEmail, "Email adress invalid format. Example: markorunac@gmail.com");
 
+                                    checkFormat(aAdress,objAdress, "Adress no correct. Example: Pinkijeva 8 / ...");
 
-checkAll(reFirstName, objFirstName, "Name invalid format. Try: Uros ");
+                                    checkFormat(aCity, objCity, "City invalid form. Example: Belgrade / ...");
 
-checkAll(reLastName, objLastName, "Last name invalid format. Try: Joksimovic ");
-
-checkAll(reUsername, objUserName, "Username invalid format. Try: @youusername / ...");
-
-checkAll(reZipAdress, objZipAdress, "Zip format invalid. Try: Pinkijeva 8, Kneza Mihajla 123...");
-
-checkAll(reEmail, objEmail, "Email invalid format. Try:markorunac@exmale.domen");
-
-checkAll(reCytyType,objCityType, "Cityformat invalid. Try: Belgrade, Moscow,London...");
-
-if(objMessage.value.length < 10 ){
-    objMessage.nextElementSibling.classList.remove("hide");
-    objMessage.innerHTML="You need at least 10 caracters";
-    objMessage.classList.add("type-border");
-}
-if(errorNumber == 0){
-    let formControl = `
-    <p>First name: ${objFirstName.value}</p>
-    <p>Email: ${objLastName.value}</p>
-    <p>Adresa: ${objUserName.value}</p>
-    <p>Smer: ${objCityType.value}</p>
-    <p>Status: ${objEmail.value}}</p>
-    <p>Predmeti: ${objZipAdress.value}</p>
-    <p>Napomena: ${objMessage.value}</p>`;
-
-    document.getElementById("row g-3 needs-validation").reset();
-}
-
-function checkAll(re,object,message){
-    if(!re.test(object.value)){
-        objekat.nextElementSibling.classList.remove("hide");
-        objekat.nextElementSibling.innerHTML=message;
-        objekat.classList.add("type-border");
-        errorNumber++;
-    }
-
-else{
-    objekat.nextElementSibling.classList.add("hide");
-    objekat.nextElementSibling.innerHTML="";
-    objket.classList.remove("type-border");
-    }
-}
-}
+                                    
+                                    
+                            
+                                    if(objComment.value.length < 10){
+                                        objComment.nextElementSibling.classList.remove("hide");
+                                        objComment.nextElementSibling.innerHTML = "Must conteint at least 10 carracters.";
+                                        objComment.classList.add("red-border");
+                                      
+                                    }
+                                    else{
+                                        objComment.nextElementSibling.classList.add("hide");
+                                        objComment.nextElementSibling.innerHTML = "";
+                                        objComment.classList.remove("red-border");
+                                       
+                                    }
+                                   
+                                    
+                                    if(eroor==0){
+                                        let gets = document.querySelector("#get");
+                                        gets.setAttribute("class", "alert alert-success mb-3");
+                                
+                                        let take = "Sign in complited";
+                                        gets.innerHTML = take;
+                                        document.getElementById("get");
+                                        document.getElementById("RAM").reset();
+                                    }
+                                    console.log(errors);
+                                }
+                                
+                                
+                                
+                            
+                                function checkFormat(a, object, msg){
+                                    if(!a.test(object.value)){
+                                        object.nextElementSibling.classList.remove("hide");
+                                        object.nextElementSibling.innerHTML = msg;
+                                        object.classList.add("red-border")
+                                        eroor++;
+                                    }
+                                    else{
+                                        object.nextElementSibling.classList.add("hide");
+                                        object.nextElementSibling.innerHTML = "";
+                                        object.classList.add("red-border");
+                                        if(eroor>=1){
+                                            eroor--;
+                                        }
+                                    }
+                                }
+                              
+                               
+                            
+                                

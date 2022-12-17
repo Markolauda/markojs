@@ -1,9 +1,6 @@
 .hide{
-    display: none;
+    display:none;
 }
-.type-border{
-    border: 1px solid #ff0000;
-}
-.btn{
-    margin-top: 10px;
+.red-border{
+    border: 1px solid #e71b1b;
 }
