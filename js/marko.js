@@ -108,15 +108,17 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                             
                                 
                                 function formValidation(){
-                                    let objFirstName, objLastName, objEmail,objAdress,objCity,objComment,tRadios;
+                                    let objFirstName, objLastName, objEmail,objAdress,objCity,objComment,nizRod;
                                 
                                     objFirstName = document.querySelector("#Name");
                                     objLastName = document.querySelector("#LastName");
                                     objEmail = document.querySelector("#inputEmail4");
                                     objAdress = document.querySelector("#inputAddress");
                                     objCity=document.querySelector("#inputCity")
-                                    objZip = document.getElementsByName("#inputZip");
+                                    objZip = document.querySelector("#inputZip");
                                     objComment = document.querySelector("#floatingTextarea2");
+                                    nizRod=document.getElementsByName("flexRadioDefault");
+                                                                    
                                     
                                 
                                     let aFirstName, aLastName, aEmail,aAdress,aCity,aCommnet;
@@ -142,7 +144,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
 
                                     checkFormat(aCity, objCity, "City invalid form. Example: Belgrade / ...");
 
-                                    
+                                   
                                     
                             
                                     if(objComment.value.length < 10){
@@ -157,8 +159,6 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                         objComment.classList.remove("red-border");
                                        
                                     }
-                                   
-                                    
                                     if(eroor==0){
                                         let gets = document.querySelector("#get");
                                         gets.setAttribute("class", "alert alert-success mb-3");
@@ -168,12 +168,25 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                         document.getElementById("get");
                                         document.getElementById("RAM").reset();
                                     }
-                                    console.log(errors);
+                                    console.log(eroors);
+
+                                    let rt="";
+                                    for(let i=0; i<nizRod.length; i++){
+                                        if(nizRod[i].checked){
+                                            rt=nizRod[i].value;
+                                            break;
+                                        }
+                                    }
+                                    if(rt ==""){
+                                       nizRod[0].parentElement.parentElement.nextElementSibling.classList.remove("hide");
+                                    nizRod[0].parentElement.parentElement.nextElementSibling.innerHTML = "You need to choose gender.";
+                                        eroor++;
+                                    }
+                                    else{
+                                        nizRod[0].parentElement.parentElement.nextElementSibling.classList.add("hide");
+                                        nizRod[0].parentElement.parentElement.nextElementSibling.innerHTML = "You need to choose gender.";
+                                    }   
                                 }
-                                
-                                
-                                
-                            
                                 function checkFormat(a, object, msg){
                                     if(!a.test(object.value)){
                                         object.nextElementSibling.classList.remove("hide");
@@ -190,6 +203,8 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                         }
                                     }
                                 }
+                                
+                                
                               
                                
                             
