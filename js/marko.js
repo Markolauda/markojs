@@ -123,12 +123,12 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     let aFirstName, aLastName, aEmail,aAdress,aCity,aCommnet;
                                 
                                 
-                                    aFirstName =/^[A-Z][a-z]{2,14}$/;
-                                    aLastName=/^[A-Z][a-z]{2,14}$/;
+                                    aFirstName =/^[A-Z][a-z]{2,7}$/;
+                                    aLastName=/^[A-Z][a-z]{2,10}$/;
                                     aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})+$/;
-                                    aAdress=/^[A-Z][a-z]{2,14}$/;
+                                    aAdress=/^[A-Z][a-z]{2,15}$/;
                                     aCity=/^[A-Z][a-z]{2,14}$/;
-                                    aCommnet=/^[A-Z][a-z]{2,14}$/;
+                                    aCommnet=/^[A-Z][a-z]{2,10}$/;
                                     
                                    
                                    
@@ -202,7 +202,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                         }
                                     }
                                 }
-                                
+                                //------------------------CredCards-----------------------//
 var nizCredit=["/images/footer-mastercard.png","./images/footer-paypal.png","./images/footer-visa.png","./images/footer-fedex.png","./images/footer-dhl.png"];
                     var cardtip="";
                     for(i=0; i<nizCredit.length; i++){
