@@ -114,8 +114,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     objLastName = document.querySelector("#LastName");
                                     objEmail = document.querySelector("#inputEmail4");
                                     objAdress = document.querySelector("#inputAddress");
-                                    objCity=document.querySelector("#inputCity")
-                                    objZip = document.querySelector("#inputZip");
+                                    objCity=document.querySelector("#inputCity");
                                     objComment = document.querySelector("#floatingTextarea2");
                                     nizRod=document.getElementsByName("flexRadioDefault");
                                                                     
@@ -204,8 +203,15 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     }
                                 }
                                 
-                                
-                              
+var nizCredit=["/images/footer-mastercard.png","./images/footer-paypal.png","./images/footer-visa.png","./images/footer-fedex.png","./images/footer-dhl.png"];
+                    var cardtip="";
+                    for(i=0; i<nizCredit.length; i++){
+                        cardtip+=`
+                        <img src="${nizCredit[i]}" alt="footer image">
+                        `;}
+                        document.querySelector(".footer-bottom").innerHTML=cardtip;
+                                 
+                                 
+                                 
                                
-                            
                                 
