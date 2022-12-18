@@ -18,9 +18,6 @@ var tipName=["Homepage","Page1","Page2","Page3","Page4"];
 
                                         //-------------------------------BOOKS----------------------------------//
 
-
-
-
 nizHref=["#","#","#","#"];
 nizH=["PHP","Java Script","Python","Node.js"];
 nizSrc=["./images/PHP.png","./images/books-2.jpg","./images/zawebjs.jpg","./images/NOD.jpg"];
@@ -167,7 +164,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                         document.getElementById("get");
                                         document.getElementById("RAM").reset();
                                     }
-                                    console.log(eroors);
+                                    
 
                                     let rt="";
                                     for(let i=0; i<nizRod.length; i++){
