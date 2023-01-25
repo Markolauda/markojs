@@ -130,15 +130,15 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                    
                                    
                         
-                                    checkFormat(aFirstName, objFirstName, "First name invalid format. Example: Rogerson.");
+                                    checkFormat(aFirstName, objFirstName, "First name invalid format. Example: Rogerson");
                                 
-                                    checkFormat(aLastName, objLastName, "Last name invalid format. Example: Rogerson.");
+                                    checkFormat(aLastName, objLastName, "Last name invalid format. Example: Rogerson");
                                 
                                     checkFormat(aEmail, objEmail, "Email adress invalid format. Example: markorunac@gmail.com");
 
-                                    checkFormat(aAdress,objAdress, "Adress no correct. Example: Pinkijeva 8 / ...");
+                                    checkFormat(aAdress,objAdress, "Adress no correct. Example: Pinkijeva 8");
 
-                                    checkFormat(aCity, objCity, "City invalid form. Example: Belgrade / ...");
+                                    checkFormat(aCity, objCity, "City invalid form. Example: Belgrade");
 
                                    
                                     
