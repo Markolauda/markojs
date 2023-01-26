@@ -101,9 +101,108 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                 window.onload = function(){
                                     let taster = document.querySelector("#abtn");
                                     taster.addEventListener("click", formValidation);
+                                    
+                                    var objFirstName, objLastName, objEmail,objAdress,objCity,objComment,nizRod;
+                                    var aFirstName, aLastName, aEmail,aAdress,aCity,aCommnet;
+                                    objFirstName = document.querySelector("#Name");
+                                    objLastName = document.querySelector("#LastName");
+                                    objEmail = document.querySelector("#inputEmail4");
+                                    objAdress = document.querySelector("#inputAddress");
+                                    objCity=document.querySelector("#inputCity");
+                                    objComment = document.querySelector("#floatingTextarea2");
+                                    nizRod=document.getElementsByName("#flexRadioDefault");
+                                    aFirstName =/^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
+                                    aLastName=/^[A-Z][a-z]{2,10}$/;
+                                    aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})$/;
+                                    aAdress=/^[A-Z][a-z]{2,15}$/;
+                                    aCity=/^[A-Z][a-z]{2,14}$/;
+                                    aCommnet=/^[A-Z][a-z]{2,10}$/;
+                                    var msgName="Invalid Format try: Marko";
+                                    var msgLastName="Invalid Format try: Markovic";
+                                    var msgEmail="example: markomarkovic@hotmail.com";
+                    
+                                    document.querySelector("#Name").addEventListener("blur",function(){
+                                        if(!aFirstName.test(objFirstName.value)){
+                                            objFirstName.nextElementSibling.classList.remove("hide");
+                                            objFirstName.nextElementSibling.innerHTML = msgName;
+                                            objFirstName.classList.add("red-border")
+                                           
+                                        }
+                                        else{
+                                            objFirstName.nextElementSibling.classList.add("hide");
+                                            objFirstName.nextElementSibling.innerHTML = "";
+                                            objFirstName.classList.add("red-border");
+                                            
+                                        }
+                                    });
+                                    
+                                    document.querySelector("#LastName").addEventListener("blur",function(){
+                                        if(!aLastName.test(objLastName.value)){
+                                            objLastName.nextElementSibling.classList.remove("hide");
+                                            objLastName.nextElementSibling.innerHTML = msgLastName;
+                                            objLastName.classList.add("red-border")
+                                           
+                                        }
+                                        else{
+                                            objLastName.nextElementSibling.classList.add("hide");
+                                            objLastName.nextElementSibling.innerHTML = "";
+                                            objLastName.classList.add("red-border");
                                 }
-                            
-                                
+                            });
+                            document.querySelector("#inputEmail4").addEventListener("blur",function(){
+                                if(!aEmail.test(objEmail.value)){
+                                    objEmail.nextElementSibling.classList.remove("hide");
+                                    objEmail.nextElementSibling.innerHTML = msgEmail;
+                                    objEmail.classList.add("red-border")
+                                   
+                                }
+                                else{
+                                    objEmail.nextElementSibling.classList.add("hide");
+                                    objEmail.nextElementSibling.innerHTML = "";
+                                    objEmail.classList.add("red-border");
+                                    
+                                }
+                            });
+                            document.querySelector("#LastName").addEventListener("blur",function(){
+                                if(!aLastName.test(objLastName.value)){
+                                    objLastName.nextElementSibling.classList.remove("hide");
+                                    objLastName.nextElementSibling.innerHTML = msgLastName;
+                                    objLastName.classList.add("red-border")
+                                   
+                                }
+                                else{
+                                    objLastName.nextElementSibling.classList.add("hide");
+                                    objLastName.nextElementSibling.innerHTML = msgEmail;
+                                    objLastName.classList.add("red-border");
+                        }
+                    });
+                    document.querySelector("#inputAddress").addEventListener("blur",function(){
+                        if(!aAdress.test(objAdress.value)){
+                            objAdress.nextElementSibling.classList.remove("hide");
+                            objAdress.nextElementSibling.innerHTML = "Example: Pinkijeva 8";
+                            objAdress.classList.add("red-border")
+                           
+                        }
+                        else{
+                            objAdress.nextElementSibling.classList.add("hide");
+                            objAdress.nextElementSibling.innerHTML = "";
+                            objAdress.classList.add("red-border");
+                             }
+                     });
+                     document.querySelector("#inputCity").addEventListener("blur",function(){
+                        if(!aCity.test(objCity.value)){
+                            objCity.nextElementSibling.classList.remove("hide");
+                            objCity.nextElementSibling.innerHTML = "Example: Belgrade";
+                            objCity.classList.add("red-border")
+                           
+                        }
+                        else{
+                            objCity.nextElementSibling.classList.add("hide");
+                            objCity.nextElementSibling.innerHTML = "";
+                            objCity.classList.add("red-border");
+                             }
+                     });
+                    }
                                 function formValidation(){
                                     let objFirstName, objLastName, objEmail,objAdress,objCity,objComment,nizRod;
                                 
@@ -114,15 +213,16 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     objCity=document.querySelector("#inputCity");
                                     objComment = document.querySelector("#floatingTextarea2");
                                     nizRod=document.getElementsByName("flexRadioDefault");
+                                    checkBox=document.getElementById("#gridCheck");
                                                                     
                                     
                                 
                                     let aFirstName, aLastName, aEmail,aAdress,aCity,aCommnet;
                                 
                                 
-                                    aFirstName =/^[A-Z][a-z]{2,7}$/;
+                                    aFirstName =/^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
                                     aLastName=/^[A-Z][a-z]{2,10}$/;
-                                    aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})+$/;
+                                    aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})$/;
                                     aAdress=/^[A-Z][a-z]{2,15}$/;
                                     aCity=/^[A-Z][a-z]{2,14}$/;
                                     aCommnet=/^[A-Z][a-z]{2,10}$/;
@@ -136,7 +236,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                 
                                     checkFormat(aEmail, objEmail, "Email adress invalid format. Example: markorunac@gmail.com");
 
-                                    checkFormat(aAdress,objAdress, "Adress no correct. Example: Pinkijeva 8");
+                                    checkFormat(aAdress,objAdress, "Example: Pinkijeva 8");
 
                                     checkFormat(aCity, objCity, "City invalid form. Example: Belgrade");
 
@@ -155,17 +255,6 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                         objComment.classList.remove("red-border");
                                        
                                     }
-                                    if(eroor==0){
-                                        let gets = document.querySelector("#get");
-                                        gets.setAttribute("class", "alert alert-success mb-3");
-                                
-                                        let take = "Sign in complited";
-                                        gets.innerHTML = take;
-                                        document.getElementById("get");
-                                        document.getElementById("RAM").reset();
-                                    }
-                                    
-
                                     let rt="";
                                     for(let i=0; i<nizRod.length; i++){
                                         if(nizRod[i].checked){
@@ -173,15 +262,12 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                             break;
                                         }
                                     }
-                                    if(rt ==""){
-                                       nizRod[0].parentElement.parentElement.nextElementSibling.classList.remove("hide");
-                                    nizRod[0].parentElement.parentElement.nextElementSibling.innerHTML = "You need to choose gender.";
-                                        eroor++;
+                                    let Terms="";
+                                    if(checkBox.checked){
+                                        Terms+=checkBox.value;
+                                       
                                     }
-                                    else{
-                                        nizRod[0].parentElement.parentElement.nextElementSibling.classList.add("hide");
-                                        nizRod[0].parentElement.parentElement.nextElementSibling.innerHTML = "You need to choose gender.";
-                                    }   
+                            
                                 }
                                 function checkFormat(a, object, msg){
                                     if(!a.test(object.value)){
@@ -198,6 +284,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                             eroor--;
                                         }
                                     }
+                                    
                                 }
                                 //------------------------CredCards-----------------------//
 var nizCredit=["/images/footer-mastercard.png","./images/footer-paypal.png","./images/footer-visa.png","./images/footer-fedex.png","./images/footer-dhl.png"];
