@@ -202,7 +202,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                             objCity.classList.add("red-border");
                              }
                      });
-                    }
+                                }
                                 function formValidation(){
                                     let objFirstName, objLastName, objEmail,objAdress,objCity,objComment,nizRod;
                                 
