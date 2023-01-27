@@ -111,16 +111,17 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     objCity=document.querySelector("#inputCity");
                                     objComment = document.querySelector("#floatingTextarea2");
                                     nizRod=document.getElementsByName("#flexRadioDefault");
-                                    aFirstName =/^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
+                                    aFirstName =/^[A-Z][a-z]{2,14}$/;
                                     aLastName=/^[A-Z][a-z]{2,10}$/;
                                     aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})$/;
-                                    aAdress=/^[A-Z][a-z]{2,15}$/;
+                                    // aAdress=/^[A-Z][a-z](\s{2,15})$/;
+                                    aAdress=/^[A-Z][a-z]{2,14}$/;
                                     aCity=/^[A-Z][a-z]{2,14}$/;
                                     aCommnet=/^[A-Z][a-z]{2,10}$/;
                                     var msgName="Invalid Format try: Marko";
                                     var msgLastName="Invalid Format try: Markovic";
                                     var msgEmail="example: markomarkovic@hotmail.com";
-                    
+                                    var msgAdress="Example: Pinkijeva 8";
                                     document.querySelector("#Name").addEventListener("blur",function(){
                                         if(!aFirstName.test(objFirstName.value)){
                                             objFirstName.nextElementSibling.classList.remove("hide");
@@ -135,6 +136,8 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                             
                                         }
                                     });
+                                    
+                                   
                                     
                                     document.querySelector("#LastName").addEventListener("blur",function(){
                                         if(!aLastName.test(objLastName.value)){
@@ -163,23 +166,13 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     
                                 }
                             });
-                            document.querySelector("#LastName").addEventListener("blur",function(){
-                                if(!aLastName.test(objLastName.value)){
-                                    objLastName.nextElementSibling.classList.remove("hide");
-                                    objLastName.nextElementSibling.innerHTML = msgLastName;
-                                    objLastName.classList.add("red-border")
-                                   
-                                }
-                                else{
-                                    objLastName.nextElementSibling.classList.add("hide");
-                                    objLastName.nextElementSibling.innerHTML = msgEmail;
-                                    objLastName.classList.add("red-border");
-                        }
-                    });
+                            
+                        
+                    
                     document.querySelector("#inputAddress").addEventListener("blur",function(){
                         if(!aAdress.test(objAdress.value)){
                             objAdress.nextElementSibling.classList.remove("hide");
-                            objAdress.nextElementSibling.innerHTML = "Example: Pinkijeva 8";
+                            objAdress.nextElementSibling.innerHTML = msgAdress;
                             objAdress.classList.add("red-border")
                            
                         }
@@ -202,7 +195,8 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                             objCity.classList.add("red-border");
                              }
                      });
-                                }
+                    }
+                                
                                 function formValidation(){
                                     let objFirstName, objLastName, objEmail,objAdress,objCity,objComment,nizRod;
                                 
@@ -220,10 +214,11 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     let aFirstName, aLastName, aEmail,aAdress,aCity,aCommnet;
                                 
                                 
-                                    aFirstName =/^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
+                                    aFirstName =/^[A-Z][a-z]{2,14}$/;
                                     aLastName=/^[A-Z][a-z]{2,10}$/;
                                     aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})$/;
-                                    aAdress=/^[A-Z][a-z]{2,15}$/;
+                                    // aAdress=/^[A-Z][a-z](\s{2,15})$/;
+                                    aAdress=/^[A-Z][a-z]{2,14}$/;
                                     aCity=/^[A-Z][a-z]{2,14}$/;
                                     aCommnet=/^[A-Z][a-z]{2,10}$/;
                                     
@@ -262,30 +257,37 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                             break;
                                         }
                                     }
-                                    let Terms="";
-                                    if(checkBox.checked){
-                                        Terms+=checkBox.value;
-                                       
-                                    }
-                            
-                                }
-                                function checkFormat(a, object, msg){
-                                    if(!a.test(object.value)){
-                                        object.nextElementSibling.classList.remove("hide");
-                                        object.nextElementSibling.innerHTML = msg;
-                                        object.classList.add("red-border")
-                                        eroor++;
-                                    }
-                                    else{
-                                        object.nextElementSibling.classList.add("hide");
-                                        object.nextElementSibling.innerHTML = "";
-                                        object.classList.add("red-border");
-                                        if(eroor>=1){
-                                            eroor--;
-                                        }
-                                    }
                                     
+                                    if(!eroor){
+                                        let sign=document.querySelector("#get");
+                                        sign.setAttribute("class","alert alert-success");
+                                        let signin="You complited sign in";
+                                        sign.innerHTML=signin;
+                                        document.getElementById("get");
+                                        document.getElementById("RAM").reset();
+
+                                    }
+                                    function checkFormat(a, object, msg){
+                                        if(!a.test(object.value)){
+                                            object.nextElementSibling.classList.remove("hide");
+                                            object.nextElementSibling.innerHTML = msg;
+                                            object.classList.add("red-border")
+                                            eroor++;
+                                        }
+                                        else{
+                                            object.nextElementSibling.classList.add("hide");
+                                            object.nextElementSibling.innerHTML = "";
+                                            object.classList.add("red-border");
+                                            if(eroor>=1){
+                                                eroor--;
+                                            }
+                                        }
+                                        
+                                    }
                                 }
+                                
+
+                                
                                 //------------------------CredCards-----------------------//
 var nizCredit=["/images/footer-mastercard.png","./images/footer-paypal.png","./images/footer-visa.png","./images/footer-fedex.png","./images/footer-dhl.png"];
                     var cardtip="";
