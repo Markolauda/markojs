@@ -1,6 +1,6 @@
                                     //-----------------------------MENI---------------------//
-var tipHref=["#Homepage","#Page1","#Page2","#Page3","Page4"];
-var tipName=["Homepage","Page1","Page2","Page3","Page4"];
+var tipHref=["#Hello","#Me","#Study","#car","#Contact"];
+var tipName=["Hello","Me","Study","Achivments","Contact"];
     var menitip="";
     menitip+="<ul class='main-navigation__ul'>"
         for(let i=0; i<tipHref.length; i++){
@@ -114,7 +114,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     aFirstName =/^[A-Z][a-z]{2,14}$/;
                                     aLastName=/^[A-Z][a-z]{2,10}$/;
                                     aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})$/;
-                                    // aAdress=/^[A-Z][a-z](\s{2,15})$/;
+                                    
                                     aAdress=/^[A-Z][a-z]{2,14}$/;
                                     aCity=/^[A-Z][a-z]{2,14}$/;
                                     aCommnet=/^[A-Z][a-z]{2,10}$/;
@@ -217,7 +217,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     aFirstName =/^[A-Z][a-z]{2,14}$/;
                                     aLastName=/^[A-Z][a-z]{2,10}$/;
                                     aEmail=/^[a-z]+([\.]?[a-z]*[\d]*)*\@[a-z]+([\.]?[a-z]+)*(\.[a-z]{2,3})$/;
-                                    // aAdress=/^[A-Z][a-z](\s{2,15})$/;
+                                   
                                     aAdress=/^[A-Z][a-z]{2,14}$/;
                                     aCity=/^[A-Z][a-z]{2,14}$/;
                                     aCommnet=/^[A-Z][a-z]{2,10}$/;
@@ -296,7 +296,22 @@ var nizCredit=["/images/footer-mastercard.png","./images/footer-paypal.png","./i
                         <img src="${nizCredit[i]}" alt="footer image">
                         `;}
                         document.querySelector(".footer-bottom").innerHTML=cardtip;
-                                 
+
+                    //--------------------------Back to top----------------//
+                 $(window).scroll(function(){
+                    let top=$(this)[0].scrollY                
+                    if(top>2650){
+                        $("#goup").show();
+                    }
+                    else{
+                        $("#goup").hide();
+                    }
+                 });
+                 $("#goup").click(function(){
+                    $("html").animate({
+                        scrollTop: 0
+                    },100);
+                 });
                                  
                                  
                                
