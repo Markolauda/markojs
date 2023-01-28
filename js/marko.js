@@ -121,7 +121,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                     var msgName="Invalid Format try: Marko";
                                     var msgLastName="Invalid Format try: Markovic";
                                     var msgEmail="example: markomarkovic@hotmail.com";
-                                    var msgAdress="Example: Pinkijeva 8";
+                                    var msgAdress="Example: Pinkijeva";
                                     document.querySelector("#Name").addEventListener("blur",function(){
                                         if(!aFirstName.test(objFirstName.value)){
                                             objFirstName.nextElementSibling.classList.remove("hide");
@@ -231,7 +231,7 @@ var nizCouterB=["Books Red","Pages Coded","Happy Users","Project's Sold"];
                                 
                                     checkFormat(aEmail, objEmail, "Email adress invalid format. Example: markorunac@gmail.com");
 
-                                    checkFormat(aAdress,objAdress, "Example: Pinkijeva 8");
+                                    checkFormat(aAdress,objAdress, "Example: Pinkijeva");
 
                                     checkFormat(aCity, objCity, "City invalid form. Example: Belgrade");
 
